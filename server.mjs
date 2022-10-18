@@ -152,6 +152,7 @@ app.post("/signup", upload.any(), (req, res) => {
                                             (err, result) => {
                                                 if (!err) {
                                                     console.log("data saved: ", result);
+                                                    console.log("user is created:", result )
                                                     res.status(201).send({
                                                         message: "user is created",
                                                         data: {
@@ -159,6 +160,7 @@ app.post("/signup", upload.any(), (req, res) => {
                                                             email: body.email.toLowerCase(),
                                                             profilePicture: urlData[0]
                                                         }
+                                                   
                                                     });
                                                 } else {
                                                     console.log("db error: ", err);
@@ -193,21 +195,6 @@ app.post("/signup", upload.any(), (req, res) => {
 
 });
 ////======================last step===========
-// app.get("/users", async (req, res) => {
-//     try {
-//         let users = await userModel.find({}).exec();
-//         console.log("all user : ", users);
-
-//         res.send({
-//             message: "all users",
-//             data: users
-//         });
-//     } catch (error) {
-//         res.status(500).send({
-//             message: "failed to get product"
-//         });
-//     }
-// })
 
 app.get('/users', async(req,res)=>{
     try{

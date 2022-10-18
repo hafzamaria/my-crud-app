@@ -1,8 +1,10 @@
 import axios from 'axios';
 import {useEffect, useState } from "react";
+
+
 import './App.css';
 function App() {
-
+   
   const [Name, setName] = useState("")
   const [Email, setEmail] = useState("")
   const [Password, setPassword] = useState("")
@@ -14,7 +16,7 @@ function App() {
 
     let getAllUsers = async () => {
       let response = await axios.get('http://localhost:5000/users');
-      setUsers(response.data.data)
+      setUsers(response.data.data.reverse())
     }
     getAllUsers();
 
@@ -49,26 +51,59 @@ function App() {
     })
       .then(res => {
         console.log(`upload Success` + res.data);
+        document.querySelector("#message").innerHTML = res.data.message;
         setToggleRefresh(!toggleRefresh)
       })
       .catch(err => {
         console.log(err);
+        document.querySelector("#message").innerHTML = err.res.data.message;
+      
       })
   }
 
 
   return (
-    <div>
+   <>
+   <div className='flex'>
+     <div className="main"> 
+    
+    <div className="start">
+<h1>Signup Form</h1>
+    <p class="para">please fill in this form to create an account!</p>
+   </div>
 
-      <form onSubmit={doSignup}>
-      Name: <input name="name" type="text" placeholder="Name" id='name' onChange={(e)=>{setName(e.target.value)}} />
+       <form onSubmit={doSignup}>
+       <div className="in1">
+       Name: <input 
+       name="name" 
+      type="text" 
+      placeholder="Name" 
+      id='name' 
+      onChange={(e)=>{setName(e.target.value)}} />
+      </div>
         <br />
-        Email: <input name="email" type="email" placeholder="Email" id='email' onChange={(e)=>{setEmail(e.target.value)}} />
+        Email: <input 
+        className="in1"
+        name="email" 
+        type="email"
+         placeholder="Email" 
+         id='email' 
+         onChange={(e)=>{setEmail(e.target.value)}} />
+         <br />
+       Password: <input 
+        className="in1"
+        name="password" 
+        type="password" 
+        placeholder="Password" 
+        id='password' 
+        onChange={(e)=>{setPassword(e.target.value)}} />
         <br />
-        Password: <input name="password" type="password" placeholder="Password" id='password' onChange={(e)=>{setPassword(e.target.value)}} />
-        <br />
-
-        Profile Picture: <input type="file" id="profilePictureInput" accept='image/*'
+   
+         Profile Picture: <input 
+         className= 'profile'
+         type="file" 
+         id="profilePictureInput" 
+         accept='image/*'
           onChange={() => {
             ////// to display imager instantly on screen
             var profilePictureInput = document.getElementById("profilePictureInput");
@@ -76,15 +111,18 @@ function App() {
             console.log("url: ", url);
             document.getElementById("img").innerHTML = `<img width="200px" src="${url}" alt="" id="img"> `
           }} />
-
+<div className='sign'>
         <div id="img"></div>
 
-        <br />
-        <button type='submit'>Signup</button>
-      </form>
+       <br />
+       
+         <button className="but" type='submit'>Signup</button>
+         </div>
+       </form> 
+       <p id="message"></p>
+       </div>
 
-
-      <h1>Users List: </h1>
+   
 
       <div className='map'>
         {users.map(eachUser => (
@@ -96,12 +134,8 @@ function App() {
           </div>
         ))}
       </div>
-
-
-
-
-
-    </div>
+      </div>
+    </>
   );
 }
 
