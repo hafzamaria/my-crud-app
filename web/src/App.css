@@ -16,9 +16,9 @@
 .name {
   margin-left: 20px;
   font-size: 30px;
-
-  margin-bottom: -11px;
-  margin-top: 20px;
+  margin-bottom: -10px;
+    margin-top: 20px;
+  
 }
 
 /* newcss */
@@ -86,7 +86,7 @@ input {
   border: 1px solid rgb(10, 172, 226);
   margin-top: -14px;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .profile {
   margin-bottom: 10px;
@@ -109,4 +109,12 @@ input {
   display: flex;
   margin-top: 13px;
   justify-content: space-between;
+}
+.msg{
+  display: flex;
+  flex-direction: column;
+}
+.message{
+  margin-left: 2px;
+
 }

@@ -111,12 +111,16 @@ function App() {
             console.log("url: ", url);
             document.getElementById("img").innerHTML = `<img width="200px" src="${url}" alt="" id="img"> `
           }} />
-<div className='sign'>
+     <div className='sign'>
+
         <div id="img"></div>
 
-       <br />
-       
+       <div className='msg'>
+         
          <button className="but" type='submit'>Signup</button>
+         <p className='message' id="message"></p>
+         </div>
+
          </div>
        </form> 
        <p id="message"></p>
