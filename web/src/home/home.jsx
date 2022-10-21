@@ -6,7 +6,7 @@ let Home= ()=>{
     
     return(
        
-        <div className='backimg'>
+        <div className='image'>
           <img width={ 1080} className='bimg' src={eshop} alt="" />  
         </div>
     )
