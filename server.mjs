@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 app.use(cors({
-    origin: ['http://localhost:3000', "https://the-great-mariamomina-site.netlify.app/product" ,"*"],
+    origin: ['http://localhost:3000', "https://the-great-mariamomina-site.netlify.app/" ,"*"],
     // credentials: true
 }));
 
