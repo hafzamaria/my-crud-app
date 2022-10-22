@@ -66,7 +66,7 @@ h1 {
 .main {
   width: 368px;
   /* margin-left: 300px; */
-  height: 700px;
+  height: 100%;
   padding: 35px;
   background-color: rgb(247, 247, 247);
   font-size: 18px;
@@ -136,6 +136,8 @@ input {
 }
 .message {
   margin-left: 2px;
+  margin-top: 50px;
+  font-weight: 600;
 }
 .result {
   margin-left: 80px; 
