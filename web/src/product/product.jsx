@@ -38,7 +38,7 @@ function Product() {
     axios({
       method: "post",
       // url: "http://localhost:5000/product",
-       url: "https://dashboard.heroku.com/apps/crud--crud-app/activity/product",
+       url: "https://crud--crud-app.herokuapp.com/product",
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
       // withCredentials: true

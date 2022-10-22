@@ -36,7 +36,7 @@ function Signup() {
     axios({
       method: "post",
       // url: "http://localhost:5000/signup",
-      url: "https://dashboard.heroku.com/apps/crud--crud-app/activity/signup",///after backend deploy connect url instead of local host
+      url: "https://crud--crud-app.herokuapp.com/signup",///after backend deploy connect url instead of local host
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
       // withCredentials: true
