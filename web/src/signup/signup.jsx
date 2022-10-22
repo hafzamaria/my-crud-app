@@ -13,7 +13,7 @@ function Signup() {
 
   useEffect(() => {
     let getAllUsers = async () => {
-      let response = await axios.get("http://localhost:5000/users");
+      let response = await axios.get("https://crud--crud-app.herokuapp.com/users");
       setUsers(response.data.data.reverse());
     };
     getAllUsers();

@@ -12,7 +12,7 @@ function Product() {
 
   useEffect(() => {
     let getAllProducts = async () => {
-      let response = await axios.get("http://localhost:5000/products");
+      let response = await axios.get("https://crud--crud-app.herokuapp.com/products");
       setProducts(response.data.data.reverse());
     };
     getAllProducts();
