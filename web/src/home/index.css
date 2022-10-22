@@ -8,4 +8,8 @@ body {
     justify-content: center;
    
 }
+.bimg{
+    display: flex;
+    justify-content: center;
+}
 
